@@ -7,11 +7,15 @@ const routes = [
     component: MainLayout,
     children: [
       { path: "/", component: () => import("pages/MainPage.vue") },
-
       {
-        path: "/estimate1",
+        path: "/estimate",
         component: () =>
-          import("src/components/template/estimate/estimatePageF.vue"),
+          import("src/components/template/estimate/estimatePage.vue"),
+      },
+      {
+        path: "/completion",
+        component: () =>
+          import("src/components/template/estimate/completionPage.vue"),
       },
       {
         path: "/Description",

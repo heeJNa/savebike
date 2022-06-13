@@ -170,6 +170,7 @@
 
 <script>
 import { defineComponent, ref } from "vue";
+
 export default defineComponent({
   name: "estimatePage",
 
@@ -190,31 +191,16 @@ export default defineComponent({
       show: false,
       // rem 으로 작성
       createForm: {
-        customerName: '',
-        customerBirthDay: '',
-        customerGender: 'male',
-        customerPhoneNumber: '',
-        requestType: '',
-        requestMemo: '',
-        inflowSiteId: '',
-        mediaId: '',
-        companyId: '',
-        consultationStatus: '',
-        counselingRoute: '',
-        callRoute: '',
-        funnel: '',
-        eventName: '',
-        customerRequest: '',
-        customerComment: '',
-        price: '',
-        exhaust: '',
-        deductionPoints: '',
-        treatment: '',
-        eumNo: '',
-        note: '',
-        mobileReservation: ''
+        customerName: "",
+        customerPhoneNumber: "",
+        customerBirthDay: "",
+        customerGender: "",
+        displacementVolume: "",
+        propertyCompensation: "",
+        classification: "",
+        discountPremium: "",
       },
-    }
+    };
   },
   methods: {
     create() {
@@ -225,6 +211,9 @@ export default defineComponent({
 
         })
 				.then((result) => {
+          this.$router.push({
+            path: "/completion",
+          });
 				})
 				.catch((error) => {
 					console.error(error)
@@ -349,7 +338,7 @@ section {
     }
   }
 }
-.mt27{
+.mt27 {
   margin-top: 20px;
 }
 </style>
