@@ -176,7 +176,7 @@
               >바로가기<i class="fa-solid fa-caret-right"></i
             ></span>
           </router-link>
-          <router-link to="">
+          <router-link to="Description">
             <span class="sec2">보험<br />알아보기</span>
             <span class="sec3"
               >바로가기<i class="fa-solid fa-caret-right"></i
@@ -229,9 +229,9 @@
         <div>
           <swiper
             :modules="modules"
-            :slides-per-view="3.5"
+            :slides-per-view="3"
             :loop="true"
-            :autoplay="{
+            :autoplay0="{
               delay: 2500,
               disableOnInteraction: false,
             }"
@@ -260,8 +260,8 @@ import { ref } from "vue";
 import { Navigation, Pagination, Scrollbar, Autoplay, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+// import "swiper/css/pagination";
+// import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 
@@ -314,7 +314,6 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .main {
-  padding: 54px 0;
   .top {
     display: flex;
     justify-content: space-between;
@@ -435,7 +434,7 @@ export default defineComponent({
 }
 @media screen and (max-width: 500px) and (min-width: 320px) {
   .main {
-    padding: 54px 0 0 0 !important;
+    margin-bottom: 0 ;
     section.banner {
       gap: 10px;
       justify-content: center;
@@ -462,6 +461,7 @@ export default defineComponent({
             justify-content: flex-end !important;
           }
         }
+
       }
       .right {
         width: 40%;
@@ -512,6 +512,7 @@ export default defineComponent({
       display: flex;
       justify-content: center;
       align-items: center;
+
     }
     section.bottom {
       margin-top: 34px;
@@ -519,15 +520,15 @@ export default defineComponent({
       flex-direction: column;
       gap: 10px;
 
-      .swiper {
-        display: flex;
-        position: relative;
-        width: 100%;
-        .swiper-button-prev,
-        .swiper-button-next {
-          color: $fontSub !important;
-        }
-      }
+      // .swiper {
+      //   display: flex;
+      //   position: relative;
+      //   width: 100%;
+      //   .swiper-button-prev,
+      //   .swiper-button-next {
+      //     color: $fontSub !important;
+      //   }
+      // }
     }
   }
 }

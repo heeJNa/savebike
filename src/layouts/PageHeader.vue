@@ -1,8 +1,8 @@
 <template>
-  <header>
+  <q-header>
     <div class="container desktop" v-if="$q.platform.is.desktop">
       <router-link to="/">
-        <img src="~assets/img/LOGO.png" alt="/" />
+        <img src="~assets/img/LOGO.png" alt="LOGO" />
       </router-link>
       <div class="menu_wrapper">
         <ul class="menu">
@@ -19,29 +19,32 @@
     <div class="container mobile" v-if="$q.platform.is.mobile">
       <div class="mheader">
         <router-link to="/">
-          <img src="~assets/img/LOGO.png" alt="/" />
+          <img src="~assets/img/M-LOGO.png" alt="/" />
         </router-link>
       </div>
-      <q-tabs v-model="tab">
-        <q-route-tab to="/">
+      <q-tabs v-model="tab"
+      active-class="base"
+      >
+        <q-route-tab to="/"  class="font">
           <img src="~assets/img/content_paste.svg" />
           <span>나의계약</span>
         </q-route-tab>
-        <q-route-tab to="/">
+        <q-route-tab to="/"  class="font">
           <img src="~assets/img/alarm-warning-line.svg" />
           <span>사고/보상</span>
         </q-route-tab>
-        <q-route-tab to="/">
+        <q-route-tab to="/"  class="font" >
           <img src="~assets/img/feedback-line.svg" />
           <span>알림</span>
+          <q-badge color="red" floating>2</q-badge>
         </q-route-tab>
-        <q-route-tab to="/">
+        <q-route-tab to="/" class="font">
           <img src="~assets/img/lock_outline.svg" />
           <span>인증센터</span>
         </q-route-tab>
       </q-tabs>
     </div>
-  </header>
+  </q-header>
 </template>
 
 <script>
@@ -56,4 +59,5 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>

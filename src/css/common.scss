@@ -51,7 +51,7 @@ body {
 }
 .sec3 {
   font-size: 14px;
-  line-height: 27px;
+  line-height: 20px;
 }
 .f300 {
   font-weight: 300;
@@ -93,11 +93,24 @@ hr {
   border: none;
   border-bottom: 1px solid $hr;
 }
+// sprite
+.sprite {
+  background: url(../assets/img/sprite.png) no-repeat 0 0 / 392px 255px;
+  display: inline-block;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 27px;
+  height: 27px;
+}
+.sprite.zoomplus {
+  background-position: -368px -92px;
+}
 
-header {
-  box-shadow: 0 0 3px 0 rgb(0 76 146 / 15%);
+
+.q-header {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
   z-index: 9999;
-
+  background-color: $white;
   div.desktop {
     a {
       display: flex;
@@ -162,6 +175,43 @@ button.orange {
   color: $white;
 }
 
+// navigation
+.q-carousel__control{
+  right: 0;
+  bottom: 0;
+}
+.q-carousel__navigation-inner{
+  justify-content: end;
+  .q-btn{
+    margin: 0  0 0 10px;
+  }
+  .q-btn,
+  .q-icon{
+    min-height: 10px;
+    min-width: 10px;
+    font-size:15px;
+    padding: 0;
+    color: $base;
+  }
+}
+
+// prev next
+.coalition{
+  .swiper-button-prev{
+    color: #B6B8BD;
+    left:0;
+  }
+  .swiper-button-next{
+    color: #B6B8BD;
+    right:0;
+  }
+}
+.coalition{
+  .swiper-slide{
+    display: flex;
+    justify-content: center;
+  }
+}
 // flex
 .d_flex {
   display: flex;
@@ -199,3 +249,4 @@ button.orange {
 .f2 {
   flex: 2;
 }
+
