@@ -13,62 +13,85 @@
           <h2 class="sec2">이륜차정보입력</h2>
           <form action="post">
             <fieldset>
-              <label for="" required
+              <label for=""
                 >가입경력<i class="fa-solid fa-circle-exclamation"></i
               ></label>
-              <select name="" id="">
-                <option value="" selected="selected">1년 미만</option>
-                <option value="">2년 미만</option>
-                <option value="">3년 미만</option>
-                <option value="">3년 이상</option>
+              <select name="" v-model="createForm.enrollmentyears" required>
+                <option value="0">1년 미만</option>
+                <option value="1">2년 미만</option>
+                <option value="2">3년 미만</option>
+                <option value="3">3년 이상</option>
               </select>
             </fieldset>
             <fieldset>
-              <label for="" required
+              <label for=""
                 >법규위반<i class="fa-solid fa-circle-exclamation"></i
               ></label>
-              <select name="" id="" class="">
-                <option value="" selected="selected">할인적용</option>
+              <select
+                name=""
+                id=""
+                class=""
+                v-model="createForm.violationLaw"
+                required
+              >
+                <option value="discount">할인적용</option>
               </select>
             </fieldset>
             <fieldset>
-              <label for="" required
+              <label for=""
                 >운전연령<i class="fa-solid fa-circle-exclamation"></i
               ></label>
-              <select name="" id="">
-                <option value="" selected="selected">전연령</option>
-                <option value="">만19세이상</option>
-                <option value="">만21세이상</option>
-                <option value="">만24세이상</option>
-                <option value="">만26세이상</option>
-                <option value="">만30세이상</option>
-                <option value="">만35세이상</option>
-                <option value="">만43세이상</option>
-                <option value="">만48세이상</option>
+              <select
+                name=""
+                id=""
+                v-model="createForm.drivingExperience"
+                required
+              >
+                <option value="all">전연령</option>
+                <option value="19">만19세이상</option>
+                <option value="21">만21세이상</option>
+                <option value="24">만24세이상</option>
+                <option value="26">만26세이상</option>
+                <option value="30">만30세이상</option>
+                <option value="35">만35세이상</option>
+                <option value="43">만43세이상</option>
+                <option value="48">만48세이상</option>
               </select>
             </fieldset>
             <fieldset>
-              <label for="" required
+              <label for=""
                 >운전자한정<i class="fa-solid fa-circle-exclamation"></i
               ></label>
-              <select name="" id="">
-                <option value="" selected="selected">누구나</option>
-                <option value="">가족한정</option>
-                <option value="">기명피보험자1인한정</option>
+              <select name="" id="" v-model="createForm.driverOnly" required>
+                <option value="anyone" selected="selected">누구나</option>
+                <option value="familyOnly">가족한정</option>
+                <option value="insuredPerson1">기명피보험자1인한정</option>
               </select>
             </fieldset>
             <fieldset>
-              <label for="" required
+              <label for=""
                 >물적사고할증<i class="fa-solid fa-circle-exclamation"></i
               ></label>
-              <select name="" id="">
-                <option value="" selected="selected">50만원</option>
-                <option value="">200만원</option>
+              <select
+                name=""
+                id=""
+                v-model="createForm.physicalAccident"
+                required
+              >
+                <option value="50">50만원</option>
+                <option value="200">200만원</option>
               </select>
             </fieldset>
             <fieldset>
-              <label for="agree" required>이용약관동의</label>
-              <input type="checkbox" name="" value="" id="agree" checked />
+              <label for="agree">이용약관동의</label>
+              <input
+                type="checkbox"
+                name=""
+                value=""
+                id="agree"
+                checked
+                required
+              />
             </fieldset>
             <textarea
               name=""
@@ -76,12 +99,13 @@
               cols="30"
               rows="10"
               placeholder="상담내용을 남겨주세요"
+              v-model="createForm.note"
             ></textarea>
           </form>
         </div>
       </section>
       <div class="btn_wrapper d_flex jcc aic">
-        <button @click="Postestimate">
+        <button @click="Postestimate2">
           <span class="sec2">견적문의</span>\
         </button>
       </div>
@@ -90,25 +114,40 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent, reactive, ref } from "vue";
 export default defineComponent({
   name: "estimatePage",
-
   components: {},
-
-  setup() {
-    const Postestimate = () => {
-      console.log("문의");
-      // 견적문의
-      // this.$router.push({
-      //   path: "/",
-      // });
-    };
+  setup() {},
+  data() {
     return {
-      Postestimate,
+      createForm: {
+        enrollmentyears: "",
+        violationLaw: "",
+        drivingExperience: "",
+        driverOnly: "",
+        physicalAccident: "",
+        note: "",
+      },
     };
   },
-  methods: {},
+  methods: {
+    Postestimate2() {
+      const data = this.createForm;
+      const HOST = `https://ata.mrkim.co.kr/service/open/api/request-raw/add`;
+      this.$axios
+        .post(HOST, data, {})
+        .then((result) => {
+          //메인으로 이동
+          this.$router.push({
+            path: "/completion",
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
+  },
 });
 </script>
 <style lang="scss" scoped>
