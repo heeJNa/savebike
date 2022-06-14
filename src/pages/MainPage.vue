@@ -170,7 +170,7 @@
           </q-carousel>
         </div>
         <div class="right">
-          <router-link to="/estimate1">
+          <router-link to="estimate">
             <span class="sec2">실시간<br />비교견적</span>
             <span class="sec3"
               >바로가기<i class="fa-solid fa-caret-right"></i
@@ -434,7 +434,7 @@ export default defineComponent({
 }
 @media screen and (max-width: 500px) and (min-width: 320px) {
   .main {
-    margin-bottom: 0 ;
+    margin-bottom: 0;
     section.banner {
       gap: 10px;
       justify-content: center;
@@ -461,7 +461,6 @@ export default defineComponent({
             justify-content: flex-end !important;
           }
         }
-
       }
       .right {
         width: 40%;
@@ -512,7 +511,6 @@ export default defineComponent({
       display: flex;
       justify-content: center;
       align-items: center;
-
     }
     section.bottom {
       margin-top: 34px;

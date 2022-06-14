@@ -5,6 +5,7 @@
 // color
 $blue: #1890ff;
 $blue2: #eceff6;
+$blue3: #dee7fe;
 $base: #272e3f;
 $font: #333333;
 $fontSub: #b6b8bd;
@@ -106,10 +107,9 @@ hr {
   background-position: -368px -92px;
 }
 
-
 .q-header {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
-  z-index: 9999;
+  // z-index: 9999;
   background-color: $white;
   div.desktop {
     a {
@@ -176,38 +176,38 @@ button.orange {
 }
 
 // navigation
-.q-carousel__control{
+.q-carousel__control {
   right: 0;
   bottom: 0;
 }
-.q-carousel__navigation-inner{
+.q-carousel__navigation-inner {
   justify-content: end;
-  .q-btn{
-    margin: 0  0 0 10px;
+  .q-btn {
+    margin: 0 0 0 10px;
   }
   .q-btn,
-  .q-icon{
+  .q-icon {
     min-height: 10px;
     min-width: 10px;
-    font-size:15px;
+    font-size: 15px;
     padding: 0;
     color: $base;
   }
 }
 
 // prev next
-.coalition{
-  .swiper-button-prev{
-    color: #B6B8BD;
-    left:0;
+.coalition {
+  .swiper-button-prev {
+    color: #b6b8bd;
+    left: 0;
   }
-  .swiper-button-next{
-    color: #B6B8BD;
-    right:0;
+  .swiper-button-next {
+    color: #b6b8bd;
+    right: 0;
   }
 }
-.coalition{
-  .swiper-slide{
+.coalition {
+  .swiper-slide {
     display: flex;
     justify-content: center;
   }
@@ -218,6 +218,9 @@ button.orange {
 }
 .column {
   flex-direction: column;
+}
+.column_r {
+  flex-direction: column-reverse;
 }
 .row {
   flex-direction: row;
@@ -250,3 +253,22 @@ button.orange {
   flex: 2;
 }
 
+// input
+textarea:focus,
+input:focus {
+  outline: none;
+}
+input::placeholder,
+textarea::placeholder {
+  color: $fontSub;
+  font-size: 14px;
+}
+
+.certification {
+  .certif_wrapper {
+    .q-btn__content {
+      display: flex;
+      flex-direction: column-reverse !important;
+    }
+  }
+}

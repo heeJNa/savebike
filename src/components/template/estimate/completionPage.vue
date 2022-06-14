@@ -25,7 +25,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .main {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 108px);
   position: relative;
 
   section {

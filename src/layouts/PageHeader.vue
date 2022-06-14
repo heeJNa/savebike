@@ -11,7 +11,7 @@
           <li><router-link to="">알림</router-link></li>
           <li><router-link to="">인증센터</router-link></li>
         </ul>
-        <router-link to="">
+        <router-link to="/logincenter">
           <button class="base sec2">로그인</button>
         </router-link>
       </div>
@@ -22,18 +22,16 @@
           <img src="~assets/img/M-LOGO.png" alt="/" />
         </router-link>
       </div>
-      <q-tabs v-model="tab"
-      active-class="base"
-      >
-        <q-route-tab to="/"  class="font">
+      <q-tabs v-model="tab" active-class="base">
+        <q-route-tab to="/" class="font">
           <img src="~assets/img/content_paste.svg" />
           <span>나의계약</span>
         </q-route-tab>
-        <q-route-tab to="/"  class="font">
+        <q-route-tab to="/" class="font">
           <img src="~assets/img/alarm-warning-line.svg" />
           <span>사고/보상</span>
         </q-route-tab>
-        <q-route-tab to="/"  class="font" >
+        <q-route-tab to="/" class="font">
           <img src="~assets/img/feedback-line.svg" />
           <span>알림</span>
           <q-badge color="red" floating>2</q-badge>
@@ -59,5 +57,4 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
