@@ -31,6 +31,11 @@ const routes = [
         component: () =>
           import("src/components/template/estimate/Description.vue"),
       },
+      {
+        path: "/ComparativeEstimate",
+        component: () =>
+          import("src/components/template/estimate/ComparativeEstimate.vue"),
+      },
     ],
   },
   // Always leave this as last one,

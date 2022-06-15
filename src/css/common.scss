@@ -36,6 +36,10 @@ body {
   font-size: 16px;
   line-height: 27px;
 }
+.body {
+  font-size: 16px;
+  line-height: 27px;
+}
 .maintt1 {
   font-size: 30px;
   line-height: 65px;
@@ -53,6 +57,10 @@ body {
 .sec3 {
   font-size: 14px;
   line-height: 20px;
+}
+.sec4 {
+  font-size: 24px;
+  line-height: 38px;
 }
 .f300 {
   font-weight: 300;
@@ -77,6 +85,11 @@ em {
   font-weight: 700;
 }
 // layout
+.q-page-container{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 112px;
+}
 .container {
   max-width: 1140px;
   width: 100%;
@@ -88,9 +101,8 @@ em {
 }
 
 hr {
-  width: 100%;
-  // padding: 0 20px;
-  // box-sizing: border-box;
+  max-width: 1140px;
+  margin-bottom: 27px;
   border: none;
   border-bottom: 1px solid $hr;
 }
@@ -106,11 +118,18 @@ hr {
 .sprite.zoomplus {
   background-position: -368px -92px;
 }
+.sprite.question {
+  width: 14px;
+  height: 14px;
+  background-position: -9px -241px;
+  margin-left:5px ;
+}
 
 .q-header {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
   // z-index: 9999;
   background-color: $white;
+  padding: 0 20px;
   div.desktop {
     a {
       display: flex;
@@ -139,9 +158,129 @@ hr {
     }
   }
 }
+
+//form
+.banner {
+  .slide_wrapper {
+    .slide {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+
+    }
+  }
+  .q-carousel {
+    height: auto;
+  }
+  .q-carousel__slide{
+    align-content: space-around;
+  }
+
+
+}
+.pc_form {
+  width: 57%;
+  border: 1px solid $hr;
+  padding: 27px 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 27px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+    div {
+      display: flex;
+      gap: 27px;
+
+      fieldset {
+        display: flex;
+        gap: 10px;
+        padding: 5px 0;
+        border-bottom: 1px solid $hr;
+        width: 100%;
+        flex: 1;
+
+        label {
+          max-width: 112px;
+          width: 100%;
+          // font-size: 16px;
+          // line-height: 27px;
+          // font-weight: 500;
+        }
+        input,
+        select {
+          width: 100%;
+          flex: 1;
+          border: none;
+        }
+        input:focus,
+        select {
+          outline: none;
+        }
+        select{
+          color: #777777;
+        }
+      }
+    }
+    .agree{
+      flex: 1;
+      align-items: center
+    }
+    textarea{
+      padding: 20px;
+      // height: 100px;
+      border: 1px solid $hr;
+      margin-top: 17px;
+    }
+  }
+  .q-btn{
+    width: 100%;
+    padding: 15px 0;
+    background-color: $base;
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+.q-tabs__content{
+  .tab{
+    width: 267px;
+    height: 57px;
+    color: $font;
+    background: $white;
+    text-align: left;
+    border-bottom: 1px solid $hr;
+    margin-bottom: 10px;
+    opacity: 1;
+    justify-content: start;
+    padding: 0 0 0 20PX;
+    .q-tab__label{
+      font-size: 18px;
+    }
+    &.active{
+      border-radius: 5PX;
+      color: $white;
+      background: $blue;
+    }
+  }
+}
+
+// footer
 footer {
   // box-shadow: 0 0 3px 0 rgb(0 76 146 / 15%);
-  padding: 27px 0;
+  padding-bottom: 27px;
+  background: $white;
+  color: $font;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
 
   div.desktop {
     display: flex;
@@ -158,10 +297,12 @@ footer {
 }
 
 // link and button
-button {
+button, .q-btn {
   border-radius: 5px;
   cursor: pointer;
+  min-height: auto;
 }
+
 button.base {
   background-color: $base;
   color: $white;
@@ -182,8 +323,8 @@ button.orange {
 }
 .q-carousel__navigation-inner {
   justify-content: end;
-  .q-btn {
-    margin: 0 0 0 10px;
+  .q-btn{
+    margin: 0  0 0 5px;
   }
   .q-btn,
   .q-icon {
@@ -249,8 +390,15 @@ button.orange {
 .f1 {
   flex: 1;
 }
+
 .f2 {
   flex: 2;
+}
+.mr5 {
+  margin-right: 5px;
+}
+.ml5 {
+  margin-left: 5px;
 }
 
 // input

@@ -47,4 +47,9 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container{
+  border-top:1px solid $hr ;
+  padding-top: 27px;
+}
+</style>
