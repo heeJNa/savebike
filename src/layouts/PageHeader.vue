@@ -12,7 +12,7 @@
           <li><router-link to="">인증센터</router-link></li>
         </ul>
         <router-link to="">
-          <button class="base sec2">로그인</button>
+          <q-btn class="base sec2">로그인</q-btn>
         </router-link>
       </div>
     </div>

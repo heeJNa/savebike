@@ -199,6 +199,8 @@ export default defineComponent({
         propertyCompensation: "",
         classification: "",
         discountPremium: "",
+        requestMemo: "",
+
       },
     };
   },
